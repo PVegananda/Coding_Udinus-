@@ -8,87 +8,88 @@ using namespace std;
 
 int main() {
 
+    int main() {
+
     int jenis_kendaraan = 1;
     double harga_ticket, jam_parkir = 0;
-    string nama_barang;
+    string nama_kendaraan;
 
-    cout << "-------------TBIAYA PARKIR MALL JAYA-------------" << endl;
-    cout << "==============================================" << endl;
-    cout << "--------------PASYAH WAHYU I. V---------------" << endl;
+    cout << "----------------TICKET PARKIR JAYA MALL-------------------" << endl;
+    cout << "==========================================================" << endl;
+    cout << "-------------------PVEGANANDA CHANNEL---------------------" << endl;
     cout << endl;
     cout << endl;
 
-    cout << "List Kendaraan:" << endl;
+
+    cout << "List Kendaraan : " << endl;
     cout << "1. Motor / Sepeda Listrik / Tossa / Sepeda" << endl;
-    cout << "2. Moto" << endl;
+    cout << "2. Mobil" << endl;
     cout << "3. Truk / Mini Truck / Mini Bus / Bus" << endl;
-    cout << "Jenis Kendaraan Anda = ";
+
+    cout << "Jenis Kendaraan Anda (1/2/3) = ";
     cin >> jenis_kendaraan;
 
-    system("cls"); //clear line
+    system("cls"); // menghapus text di atas.
 
-    cout << "-------------TBIAYA PARKIR MALL JAYA-------------" << endl;
-    cout << "==============================================" << endl;
-    cout << "--------------PASYAH WAHYU I. V---------------" << endl;
+    cout << "----------------TICKET PARKIR JAYA MALL-------------------" << endl;
+    cout << "==========================================================" << endl;
+    cout << "-------------------PVEGANANDA CHANNEL---------------------" << endl;
     cout << endl;
     cout << endl;
 
-    cout << "Lama Parkir (jam) = ";
+    cout << "Lama parkir (jam) = ";
     cin >> jam_parkir;
 
+
+    cout << endl;
     cout << endl;
 
-    cout << fixed << setprecision(0); //agar bilangan double tidak keluar e+ masuk ke library iomanip
+    // percabangan nested / bersarang
 
-        if (jenis_kendaraan == 1) {
+    if (jenis_kendaraan == 1){
+        nama_kendaraan = "Motor / Sepeda Listrik / Tossa / Sepeda";
+        if (jam_parkir > 12 && jam_parkir <= 24){
+            harga_ticket = 50000;
+        }else if (jam_parkir > 24) {
+            harga_ticket = 50000 + ((jam_parkir - 24) * 3000);
+        }else {
             harga_ticket = 3000 * jam_parkir;
-            if (jam_parkir == 12 ){
-                harga_ticket = 50000;
-            }else if (jam_parkir > 12) {
-                harga_ticket = 50000 + ((jam_parkir - 12) * 3000 );
-            }else {
-            harga_ticket = 5000 * jam_parkir;
-            }
-        } else if (jenis_kendaraan == 2)  {
-
-            if (jam_parkir == 12){
-                harga_ticket = 75000;
-            }else if (jam_parkir > 12){
-                harga_ticket = 50000 + ((jam_parkir - 12) * 5000 );
-            }else {
-                harga_ticket = 5000 * jam_parkir;
-            }
-
-        } else if (jenis_kendaraan == 3) {
-            harga_ticket = 10000 * jam_parkir;
-            if (jam_parkir == 8){
-                harga_ticket = 150000;
-            }else if (jam_parkir > 8) {
-                harga_ticket = 50000 + ((jam_parkir - 8) * 10000 );
-            }else {
-
-            harga_ticket = 5000 * jam_parkir;
-            }
-
-        } else {
-            cout << "Jenis Kendaraan Tidak Tersedia" << endl;
-            harga_ticket = 0;
-            jam_parkir = 0;
         }
+    }
 
+    else if (jenis_kendaraan == 2){
+        nama_kendaraan = "Mobil";
+        if (jam_parkir > 12 && jam_parkir <= 24){
+            harga_ticket = 75000;
+        }else if (jam_parkir > 24) {
+            harga_ticket = 75000 + ((jam_parkir - 24) * 5000);
+        }else {
+            harga_ticket = 5000 * jam_parkir;
+        }
+    }
 
-    cout << "Nama Kendaraan : ";
-        if ( jenis_kendaraan == 1 )
-            { cout<<"Motor / Sepeda Listrik / Tossa / Sepeda"<<endl; }
-        else if ( jenis_kendaraan == 2 )
-            { cout<<"Mobil"<<endl; }
-        else if ( jenis_kendaraan == 3 )
-            { cout<<"Truk / Mini Truck / Mini Bus / Bus"<<endl; }
-        else
-            { cout<<"Jenis Kendaraan Tidak Tersedia"<<endl; }
+    else if (jenis_kendaraan == 3){
+        nama_kendaraan = "Truk / Mini Truck / Mini Bus / Bus";
+        if (jam_parkir > 8 && jam_parkir <= 24){
+            harga_ticket = 150000;
+        }else if (jam_parkir > 24) {
+            harga_ticket = 150000 + ((jam_parkir - 24) * 10000);
+        }else {
+            harga_ticket = 10000 * jam_parkir;
+        }
+    }
+    else {
+        nama_kendaraan = "Tidak Tersedia";
+        cout << "Jenis Kendaraan Tidak Tersedia" << endl;
+        cout << "Gerbang tidak akan terbuka" << endl;
+        harga_ticket = 0 ;
+        jam_parkir = 0 ;
+    }
+
+    cout << "Nama Kendaraan : " << nama_kendaraan << endl;
     cout << "Lama Parkir    : " << jam_parkir << " Jam" << endl;
     cout << "Total Harga    : Rp." << harga_ticket << endl;
 
 
-    return 0; // akhir line sukses
+    return 0;
 }
