@@ -42,28 +42,32 @@ int main() {
 
         if (jenis_kendaraan == 1) {
             harga_ticket = 3000 * jam_parkir;
-            if (jam_parkir > 12){
+            if (jam_parkir == 12 ){
                 harga_ticket = 50000;
-            }
-            else {
-                harga_ticket = 50000 * jam_parkir / 12;
+            }else if (jam_parkir > 12) {
+                harga_ticket = 50000 + ((jam_parkir - 12) * 3000 );
+            }else {
+            harga_ticket = 5000 * jam_parkir;
             }
         } else if (jenis_kendaraan == 2)  {
-            harga_ticket = 5000 * jam_parkir;
-            if (jam_parkir > 12){
+
+            if (jam_parkir == 12){
                 harga_ticket = 75000;
-            }
-            else {
-                harga_ticket = 75000 * jam_parkir / 12;
+            }else if (jam_parkir > 12){
+                harga_ticket = 50000 + ((jam_parkir - 12) * 5000 );
+            }else {
+                harga_ticket = 5000 * jam_parkir;
             }
 
         } else if (jenis_kendaraan == 3) {
             harga_ticket = 10000 * jam_parkir;
-            if (jam_parkir > 12){
+            if (jam_parkir == 8){
                 harga_ticket = 150000;
-            }
-            else {
-                harga_ticket = 150000 * jam_parkir / 12;
+            }else if (jam_parkir > 8) {
+                harga_ticket = 50000 + ((jam_parkir - 8) * 10000 );
+            }else {
+
+            harga_ticket = 5000 * jam_parkir;
             }
 
         } else {
