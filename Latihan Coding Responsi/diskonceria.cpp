@@ -27,16 +27,12 @@ int main(){
 
     if (harga_seluruh_barang > 500000 && harga_seluruh_barang < 1000000){
         diskon = 0.15;
-        harga_diskon = diskon * harga_seluruh_barang;
-        harga_seluruh_barang -= harga_diskon;
-
     } else if (harga_seluruh_barang >= 1000000){
         diskon = 0.25;
-        harga_diskon = diskon * harga_seluruh_barang;
-        harga_seluruh_barang -= harga_diskon;
-
     }
 
+    harga_diskon = diskon * harga_seluruh_barang;
+    harga_seluruh_barang -= harga_diskon;
 
     cout << endl;
     cout << "Jumlah Barang yang di beli : "<<jumlah_barang <<endl;
