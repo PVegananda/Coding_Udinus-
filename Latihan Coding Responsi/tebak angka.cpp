@@ -8,7 +8,7 @@ int main() {
     int angka, random, a = 0;
     srand(time(0)); // membuat angka random / acuan
     random = rand() % 100 + 1;
-    string lanjut = "Y";
+
 
     do {
         cout << "Masukkan Angka = ";
@@ -26,17 +26,7 @@ int main() {
         }
     } while (angka != random);
 
-    while (true){
-        // digunakan saat buat game / buat list menu
-        cout << "Apakah ingin melanjutkan ";
-        cin >> lanjut;
 
-        if (lanjut == "Y"){
-
-        } else if (lanjut == "N"){
-            exit();
-        }
-    }
 
     return 0;
     }

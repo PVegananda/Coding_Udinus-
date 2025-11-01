@@ -19,9 +19,9 @@ int main(){
 
     while(a<jumlah_barang){
         cout<<"Masukkan Harga Barang = ";
-        cin>>harga_barang;
+        cin>>harga_barang; //pasti di eksekusi dan ada infinity loop
         harga_seluruh_barang += harga_barang;
-        a++;
+        a++; // satu persatu karena menghitung jumlah
 
     }
 
